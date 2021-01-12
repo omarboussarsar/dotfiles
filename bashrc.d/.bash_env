@@ -1,0 +1,21 @@
+#System
+export HISTIGNORE="pwd:up *:"
+export HISTCONTROL="erasedups:ignorespace"
+export HISTTIMEFORMAT="%F %T "
+export HISTSIZE=200000
+
+export PS1_TYPE="long"
+
+export LESS="-R $LESS"
+
+export LS_COLORS="no=00:fi=00:di=94:ln=36:pi=33:so=92:bd=33;01:ex=92:*.js=91:*.json=95:*.php=92"
+
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
+export NPM_CONFIG_PREFIX="$HOME/.npm"
+export NPM_CONFIG_CACHE="$NPM_CONFIG_PREFIX/cache"
+
+export COMPOSER_HOME="$HOME/.composer"
+
+export GREP_OPTIONS="--exclude=\*~ --exclude=\*.svn\*"
