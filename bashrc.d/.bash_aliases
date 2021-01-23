@@ -1,4 +1,21 @@
-###Plus
+### System
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# some more ls aliases
+alias ll='ls -l'
+alias la='ls -A'
+alias l='ls -CF'
+
+### Plus
 alias profile="vi $HOME/.profile"
 alias bashrc="vi $HOME/.bashrc"
 alias bash_profile="vi $HOME/projects/dotfiles/bashrc.d/.bash_profile"
@@ -19,13 +36,13 @@ alias mongod_daemon="sudo mongod --bind_ip localhost --logpath /dev/null --replS
 alias elasticsearch_daemon="elasticsearch --daemonize --cluster.name vagrant --node.name localhost"
 
 
-#Cache
+### Cache
 alias ez_clear_cache="rm -rf ezpublish/cache/* ezpublish_legacy/var/cache/* ezpublish_legacy/var/*/cache/* ezpublish/logs/* ezpublish_legacy/var/log/* ezpublish_legacy/var/*/log/* && chmod -R a+rw ezpublish/cache ezpublish_legacy/var/cache ezpublish_legacy/var/*/cache ezpublish/logs ezpublish_legacy/var/log ezpublish_legacy/var/*/log"
 alias sf2_clear_cache="rm -rf app/cache/* app/logs/* && chmod -R a+rw app/cache app/logs"
 alias sf3_clear_cache="rm -rf var/cache/* var/logs/* var/sessions/* && chmod -R a+rw var/cache var/logs var/sessions"
 
 
-#Log
+### Log
 alias sf2_log="tail -f app/logs/*"
 alias sf3_log="tail -f var/logs/*"
 alias ez_log="tail -f ezpublish/logs/*"
@@ -34,11 +51,11 @@ alias sf3_log_e="sf3_log | grep -i error"
 alias ez_log_e="ez_log | grep -i error"
 
 
-#Projects
+### Projects
 alias projects="cd $HOME/projects"
 
 
-#Tricks
+### Tricks
 alias trick_ez="cd ezpublish_legacy && php bin/php/ezpgenerateautoloads.php -k -p && php bin/php/ezpgenerateautoloads.php -e -p && php bin/php/ezpgenerateautoloads.php -o -p && rm -rf var/cache/* && rm -rf var/*/cache/* && cd .."
 alias sf_clean="rm sybinit.err .php_cs.cache"
 alias ez_clean="rm -r bin/doctrine bin/behat bin/doctrine.php sybinit.err"

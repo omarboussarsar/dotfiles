@@ -1,4 +1,4 @@
-#System
+# System
 export HISTIGNORE="pwd:up *:"
 export HISTCONTROL="erasedups:ignorespace"
 export HISTTIMEFORMAT="%F %T "
